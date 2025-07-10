@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section id="form-section">
+    <h2>Enter Your Details</h2>
+
+    <h3>Upload Profile Photo</h3>
+    <input type="file" id="profilePic" accept="image/*">
+    <br>
+    <img id="profilePreview" src="" alt="Profile Preview" width="120" style="display:none; border-radius: 50%;">
+
+    <h3>Upload About Section Photo</h3>
+    <input type="file" id="aboutPic" accept="image/*">
+
+    <form id="portfolioForm">
+      <input name="name" placeholder="Your Name" required>
+      <input name="role" placeholder="Your Role" required>
+      <textarea name="about" placeholder="Short About You" required></textarea>
+      <input name="skills" placeholder="Skills (comma separated)" required>
+
+      <h3>Education</h3>
+      <div id="educationFields"></div>
+      <button type="button" id="addEducationBtn">➕ Add Education</button>
+
+      <h3>Projects</h3>
+      <div id="projectFields"></div>
+      <button type="button" id="addProjectBtn">➕ Add Project</button>
+
+      <h3>Certifications</h3>
+      <div id="certificationFields"></div>
+      <button type="button" id="addCertBtn">➕ Add Certification</button>
+
+      <input name="email" placeholder="Your Email" required>
+      <input name="github" placeholder="GitHub URL" required>
+      <input name="linkedin" placeholder="LinkedIn URL" required>
+
+      <button type="submit">Generate Portfolio</button>
+    </form>
+  </section>
+
+  <section id="portfolio" style="display: none;">
+    <header>
+      <img id="finalProfilePic" width="120" style="border-radius: 50%; display: block; margin: auto;">
+      <h1 id="displayName"></h1>
+      <p id="displayRole"></p>
+    </header>
+
+    <section>
+      <h2>About</h2>
+      <div class="about-section">
+        <img id="finalAboutPic" alt="About Image" />
+        <div class="about-text">
+          <p id="displayAbout"></p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <ul id="displaySkills"></ul>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div id="educationContainer" class="grid-container"></div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div id="projectsContainer" class="grid-container"></div>
+    </section>
+
+    <section>
+      <h2>Certifications</h2>
+      <div id="certificationsContainer" class="grid-container"></div>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Email: <span id="displayEmail"></span></p>
+      <p>GitHub: <a id="displayGitHub" href="#" target="_blank">GitHub</a></p>
+      <p>LinkedIn: <a id="displayLinkedIn" href="#" target="_blank">LinkedIn</a></p>
+    </section>
+
+    <footer>
+      <p>&copy; <span id="footerName"></span>. All rights reserved.</p>
+    </footer>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
